@@ -10,9 +10,12 @@ class table {
     public $table;
     public $attr;
     public $query;
-    public $where=1;
+    public $where;
     function __construct($table=''){
         $this->table=$table;
+        $this->attr=null;
+        $this->query=null;
+        $this->where=1;
     }
     function select($attr='*'){
         $this->attr=$attr;
@@ -38,6 +41,7 @@ class table {
         return $this;
     }
     public function sql(){
+        $returnValue='';
         switch($this->query){
             case 'insert':
                 $tuple='';
@@ -50,25 +54,33 @@ class table {
                 $value=substr($value,0,-1);
                 $sql="insert into ".$this->table." (".$tuple.") values (".$value.")";
                 if(mysql_query($sql)){
-                    return mysql_insert_id();
+                    $returnValue= mysql_insert_id();
                 }
                 else{
-                    return false;
+                    $returnValue= false;
                 }
                 break;
             case 'select':
                 $sql="select ".$this->attr." from ".$this->table." where ".$this->where;
                 if($re=mysql_query($sql)){
-//                    $r=0;
+                    $r=array();
                     while($result=mysql_fetch_assoc($re)){
                         $r[]=$result;
                     }
-                    return $r;
+                    if(count($r)==0){
+                        $returnValue= 0;
+                    }
+                    else{
+                        $returnValue= $r;
+                    }
                 }
                 else{
-                    return false;
+                    $returnValue= false;
                 }
-            default:return false;
+                break;
+            default:$returnValue= false;
         }
+        $this->__construct($this->table);
+        return $returnValue;
     }
 }

@@ -10,4 +10,6 @@ include 'func.php';
 $a=M("txl");
 var_dump($a);
 $b=$a->select("*")->where("id = 1")->sql();
+$c=$a->sql();
 var_dump($b);
+var_dump($c);
