@@ -1,0 +1,28 @@
+#view{
+    width:500px;
+    height:375px;
+    overflow: hidden;
+}
+#container{
+    width: 2500px;
+    position: relative;
+}
+#container div{
+   float:left;
+    width: 500px;
+}
+#left{
+    font-size: 50px;
+    cursor: pointer;
+    margin-left: 200px;
+}
+#left:hover{
+    color: red;
+}
+#right{
+    font-size: 50px;
+    cursor: pointer;
+}
+#right:hover{
+    color: red;
+}

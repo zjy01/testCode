@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css.css" type="text/css"/>
+    <title>缓冲流</title>
+</head>
+<body>
+<div id="div1">缓冲流</div>
+<div id="div2">弹性流</div>
+<script language="JavaScript" type="text/javascript" src="movebuffer.js"></script>
+<script language="JavaScript" type="text/javascript" src="resilience.js"></script>
+<script>
+    var obj=document.getElementById("div1");
+    obj.onmouseover=function(){
+        movebuffer.init(obj,{width:300,height:300});
+    }
+    obj.onmouseout=function(){
+        movebuffer.init(obj,{width:100,height:100});
+    }
+    var obj2 = document.getElementById('div2');
+    obj2.onmouseover = function () {
+        relicience.init(obj2,{width:300,height:300},5,0.9);
+    }
+    obj2.onmouseout = function () {
+        relicience.init(obj2,{width:100,height:100},5,0.9);
+    }
+</script>
+</body>
+</html>

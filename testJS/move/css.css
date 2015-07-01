@@ -1,0 +1,15 @@
+#div1{
+    width:100px;
+    height: 100px;
+    background-color: aqua;
+    border-radius: 10px;
+}
+#div2{
+    width:100px;
+    height: 100px;
+    background-color: aqua;
+    border-radius: 10px;
+    position:absolute;
+    left: 500px;
+    top: 5px;
+}

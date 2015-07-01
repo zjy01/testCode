@@ -1,0 +1,16 @@
+#container{
+    column-width: 250px;
+    -webkit-column-width:250px;
+    column-gap: 5px;
+    -webkit-column-gap: 5px;
+}
+#container .box{
+    /*css3动画*/
+    -webkit-transition: all .7s ease-out .1s; /*Safari 和 Chrome*/
+    -moz-transition: all .7s ease-out .1s;/* Firefox 4*/
+    -o-transition: all .7s ease-out .1s;/* Opera*/
+    transition: all .7s ease-out .1s;/*IE9以下不支持*/
+}
+#container .box img{
+    width: 250px;
+}

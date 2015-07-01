@@ -1,0 +1,28 @@
+*{
+    margin: 0 auto;
+    padding: 0;
+    list-style: none;
+    font:bold 12px "微软雅黑";
+}
+
+#container{
+    position: absolute;
+    top:20px;
+    width:100%;
+}
+.box{
+    position: absolute;
+    border: solid 1px #cccccc;
+    padding:10px;
+    width: 200px;
+    top:0;
+    left:0;
+    /*css3动画*/
+    -webkit-transition: all .7s ease-out .1s; /*Safari 和 Chrome*/
+    -moz-transition: all .7s ease-out .1s;/* Firefox 4*/
+    -o-transition: all .7s ease-out .1s;/* Opera*/
+    transition: all .7s ease-out .1s;/*IE9以下不支持*/
+}
+img { width: 100%; }
+h3 { padding-top: 8px; }
+h2{position: absolute;}

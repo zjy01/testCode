@@ -1,0 +1,35 @@
+*{
+    margin: 0;
+    font-size: 12px;
+    font-weight: bold;
+    font-family: "微软雅黑";
+}
+#container{
+    position: relative;
+    top: 20px;
+    width: 100%;
+    background-color: aqua;
+}
+#container .box{
+    position: absolute;
+    width: 200px;
+    border: solid gray 1px;
+    padding: 10px;
+    top: 0;
+    left: 0;
+
+    /*css3动画*/
+    -webkit-transition: all .7s ease-out .1s; /*Safari 和 Chrome*/
+    -moz-transition: all .7s ease-out .1s;/* Firefox 4*/
+    -o-transition: all .7s ease-out .1s;/* Opera*/
+    transition: all .7s ease-out .1s;/*IE9以下不支持*/
+}
+#container .box img{
+    width: 100%;
+}
+h3{
+    padding-top: 8px;
+}
+h2{
+    position: absolute;
+}

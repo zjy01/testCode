@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <tis textitle>drag</title>
+    <script>
+        function handleDragDropEvent(oEvent){
+
+            switch (oEvent.type){
+                case 'dragstart':
+                    oEvent.dataTransfer.effectAllowed="move";
+                    break;
+                case 'dragenter':
+                    oEvent.dataTransfer.dropEffect="move";
+                    oEvent.returnValue = false; //覆盖默认的dragenter 及 dragover
+                    break;
+                case 'dragover':
+                    oEvent.returnValue = false; //覆盖默认的dragenter 及 dragover
+                    break;
+                case 'drop':
+                    oEvent.returnValue = false;
+                    oEvent.srcElement.innerHTML=oEvent.dataTransfer.getData('text');
+            }
+
+        }
+    </script>
+</head>
+<body>
+<form>
+    <p>Try dragging the text from the left textbox to the right one.</p>
+    <p><input type="text" value="drag this text"
+              ondragstart="handleDragDropEvent(event)"></p>
+    <p><div style=" background-color: blue; width: 200px; height: 200px;"
+              ondragenter="handleDragDropEvent(event)"
+            ondragover="handleDragDropEvent(event)"
+            ondragleave="handleDragDropEvent(event)"
+            ondrop="handleDragDropEvent(event)" ></div>
+    </p>
+    <p>
+        <textarea rows="10" cols="25" readonly="readonly" id="txt1"></textarea>
+    </p>
+</form>
+</body>
+</html>

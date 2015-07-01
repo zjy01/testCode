@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>drag</title>
+    <script>
+        function handleDragDropEvent(oEvent){
+            var oTextbox = document.getElementById('txt1');
+            oTextbox.value+=oEvent.type + '\n';
+
+        }
+    </script>
+</head>
+<body>
+<form>
+    <p>Try dragging the images.</p>
+    <p><img src="images/img_01.jpg" alt="01" ondragstart="handleDragDropEvent(event)"
+            ondrag="handleDragDropEvent(event)"
+            ondragend="handleDragDropEvent(event)" >
+    </p>
+    <p>
+         <textarea rows="10" cols="25" readonly="readonly" id="txt1"></textarea>
+    </p>
+</form>
+</body>
+</html>
