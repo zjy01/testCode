@@ -48,7 +48,7 @@ class table {
                 $value='';
                 foreach($this->attr as $assoc=>$val){
                     $tuple.=$assoc.",";
-                    $value.="\'".$val."\'".",";
+                    $value.="'".$val."'".",";
                 }
                 $tuple=substr($tuple,0,-1);
                 $value=substr($value,0,-1);
@@ -57,7 +57,7 @@ class table {
                     $returnValue= mysql_insert_id();
                 }
                 else{
-                    $returnValue= false;
+                    $returnValue= mysql_error();
                 }
                 break;
             case 'select':
@@ -75,7 +75,40 @@ class table {
                     }
                 }
                 else{
-                    $returnValue= false;
+                    $returnValue= mysql_error();
+                }
+                break;
+            case 'update':
+                $tuple='';
+                foreach($this->attr as $assoc=>$val){
+                    $tuple.=$assoc."='$val',";
+                }
+                $tuple=substr($tuple,0,-1);
+                $sql="update ".$this->table." set ".$tuple." where ".$this->where;
+                if(mysql_query($sql)){
+                    if(mysql_affected_rows()>0){
+                        $returnValue=true;
+                    }
+                    else{
+                        $returnValue =mysql_error();
+                    }
+                }
+                else{
+                    $returnValue =mysql_error();
+                }
+                break;
+            case 'delete':
+                $sql="delete from ".$this->table." where ".$this->where;
+                if(mysql_query($sql)){
+                    if(mysql_affected_rows()>0){
+                        $returnValue=true;
+                    }
+                    else{
+                        $returnValue =mysql_error();
+                    }
+                }
+                else{
+                    $returnValue =mysql_error();
                 }
                 break;
             default:$returnValue= false;
