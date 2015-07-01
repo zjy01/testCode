@@ -1,0 +1,54 @@
+/**
+ * Created by root on 15-7-1.
+ */
+.transform{
+    float: left;
+    border: dashed 1px black;
+    width: 400px;
+}
+.transform div{
+    width: 200px;
+    height: 100px;
+    background-color: aqua;
+    border: solid 1px black;
+    margin: 50px 0;
+}
+.translate{
+    transform: translate(50px,0px);/*normal*/
+    -ms-transform: translate(50px,0px);/*IE9*/
+    -webkit-transform: translate(50px,0px);/*safari and chrome*/
+    -moz-transform: translate(50px,0px);/*opera*/
+    -o-transform: translate(50px,0px);/*Firefox*/
+}
+.rotate{
+    transform: rotate(30deg);/*normal*/
+    -ms-transform: rotate(30deg);/*IE9*/
+    -webkit-transform: rotate(30deg);/*safari*/
+    -moz-transform: rotate(30deg);/*opera*/
+    -o-transform: rotate(30deg);/*Firefox*/
+}
+.scale{
+    transform: scale(1.5,1.5);/*normal*/
+    -ms-transform: scale(1.5,1.5);/*IE9*/
+    -webkit-transform: scale(1.5,1.5);/*safari*/
+    -moz-transform: scale(1.5,1.5);/*opera*/
+    -o-transform: scale(1.5,1.5);/*Firefox*/
+}
+.skew{
+    transform: skew(50deg,50deg);/*normal*/
+    -ms-transform: skew(1.5,1.5);/*IE9*/
+    -webkit-transform: skew(1.5,1.5);/*safari*/
+    -moz-transform: skew(1.5,1.5);/*opera*/
+    -o-transform: skew(1.5,1.5);/*Firefox*/
+}
+.rotateX{
+    transform: rotateX(30deg);
+    -webkit-transform: rotateX(30deg);/*safari and chrome*/
+    -moz-transform: rotateX(30deg);/*Firefox*/
+}
+.rotateY{
+    transform: rotateY(30deg);
+    -webkit-transform: rotateY(30deg);/*safari and chrome*/
+    -moz-transform: rotateY(30deg);/*Firefox*/
+}
+.transition
