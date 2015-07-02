@@ -57,9 +57,10 @@
     -moz-transform: rotateY(30deg);/*Firefox*/
 }
 .transitionWidth{
-    transition: width 1s;
-    -webkit-transition: width 1s;
+    transition: width 1s linear ;
+    -webkit-transition: width 1s linear ;
     -moz-transition: width 1s;
+    -o-transition: width 1s;
 }
 .transitionWidth:hover{
     width: 300px;
@@ -70,8 +71,62 @@
     transition: top 3s,width 3s;
     -webkit-transition: top 3s,width 3s;
     -moz-transition: top 3s,width 3s;
+    -o-transition: top 3s,width 3s;
 }
 .transitionPosition:hover{
     top: 300px;
     width: 600px;
+}
+.animationBackground{
+    animation:animationBackground 1s;
+    -moz-animation:animationBackground 1s;
+    -webkit-animation:animationBackground 1s;
+    -o-animation: animationBackground 1s;
+}
+@keyframes animationBackground {
+    from{background-color: aqua}
+    to{background-color: lime}
+}
+@-moz-keyframes animationBackground {
+    from{background-color: aqua}
+    to{background-color: lime}
+}
+@-webkit-keyframes animationBackground {
+    from{background-color: aqua}
+    to{background-color: lime}
+}
+@-o-keyframes animationBackground {
+    from{background-color: aqua}
+    to{background-color: lime}
+}
+.animationMove{
+    position: relative;
+    left: 0;
+    top: 0;
+    animation:animationMove 5s;
+    -moz-animation:animationMove 5s;
+    -webkit-animation:animationMove 5s;
+    -o-animation: animationMove 5s;
+}
+@keyframes animationMove {
+    from{
+        background-color: aqua;
+    }
+    to{
+        background-color: lime;
+        left: 200px;
+        transform: rotate(480deg);
+    }
+}
+@-moz-keyframes animationMove {
+    from{background-color: aqua}
+    to{background-color: lime}
+}
+@-webkit-keyframes animationMove {
+    from{background-color: aqua}
+    to{background-color: lime}
+}
+@-o-keyframes animationMove {
+    from{background-color: aqua}
+    to{background-color: lime}
 }
