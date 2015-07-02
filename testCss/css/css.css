@@ -35,11 +35,16 @@
     -o-transform: scale(1.5,1.5);/*Firefox*/
 }
 .skew{
+    transition: transform 3s;
+    -webkit-transition: transform 3s;
+    -moz-transition: transform 3s;
+}
+.skew:hover{
     transform: skew(50deg,50deg);/*normal*/
-    -ms-transform: skew(1.5,1.5);/*IE9*/
-    -webkit-transform: skew(1.5,1.5);/*safari*/
-    -moz-transform: skew(1.5,1.5);/*opera*/
-    -o-transform: skew(1.5,1.5);/*Firefox*/
+    -ms-transform: skew(50deg,50deg);/*IE9*/
+    -webkit-transform: skew(50deg,50deg);/*safari*/
+    -moz-transform: skew(50deg,50deg);/*opera*/
+    -o-transform: skew(50deg,50deg);/*Firefox*/
 }
 .rotateX{
     transform: rotateX(30deg);
@@ -51,4 +56,22 @@
     -webkit-transform: rotateY(30deg);/*safari and chrome*/
     -moz-transform: rotateY(30deg);/*Firefox*/
 }
-.transition
+.transitionWidth{
+    transition: width 1s;
+    -webkit-transition: width 1s;
+    -moz-transition: width 1s;
+}
+.transitionWidth:hover{
+    width: 300px;
+}
+.transitionPosition{
+    position: absolute;
+    top:150px;
+    transition: top 3s,width 3s;
+    -webkit-transition: top 3s,width 3s;
+    -moz-transition: top 3s,width 3s;
+}
+.transitionPosition:hover{
+    top: 300px;
+    width: 600px;
+}
