@@ -1,0 +1,15 @@
+#show{
+    width: 300px;
+    height: 500px;
+    float: left;
+    border: solid 1px #000;
+}
+#on-num{
+     width: 150px;
+     height: 500px;
+    border: solid 2px #000;
+    float: left;
+ }
+#useW{
+    display: none;
+}

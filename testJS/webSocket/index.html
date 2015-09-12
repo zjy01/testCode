@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>webSocket</title>
+    <link href="css.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div id="setW">
+    <h4>输入用户名，建立聊天窗口</h4>
+    <input type="text" id="userName">
+    <button id="setName">新建</button>
+</div>
+<div id="useW">
+    <h2>在线人数---<span id="online-num"></span></h2>
+    <div id="show">
+
+    </div>
+    <div id="on-num">
+        <h2>在线列表</h2>
+    </div>
+    <div style="clear: both">
+        <input type="text" id="send">
+        <button id="sendBt">发送</button>
+    </div>
+</div>
+
+<script type="text/javascript" src="websocket.js"></script>
+</body>
+</html>
